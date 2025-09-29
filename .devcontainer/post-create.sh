@@ -25,9 +25,10 @@ source /opt/ros/humble/setup.bash
 #add_config_if_not_exist "if [ -r $LOCAL_SETUP_FILE ]; then source $LOCAL_SETUP_FILE; fi"
 
 python -m venv .venv
-source ./venv/bin/activate
+source ./.venv/bin/activate
 python -m pip install .
 
+add_config_if_not_exist "source `pwd`/.venv/bin/activate"
 
 add_git_config_if_not_exist "core.autocrlf" "input"
 add_git_config_if_not_exist "core.safecrlf" "warn"
